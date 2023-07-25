@@ -52,7 +52,7 @@ const HomePage = () => {
           <div className='taskManager'>
             <h2 className='heading'>Task Manager</h2>
             <div>
-              <input type="text" autoFocus className='input' onKeyDown={handleKeypress} placeholder='e.g. wash dishes' value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" autoFocus className='input' onKeyDown={handleKeypress} placeholder='e.g. wash dishes (max - 20 char)' value={name} onChange={(e) => setName(e.target.value)} />
               <button onClick={handleSave} className='button'>submit</button>
             </div>
           </div>

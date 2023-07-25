@@ -231,13 +231,17 @@ input[type=number] {
     .taskManager {
         width: 90%;
     }
-
+    .taskManager input{
+        /* width: 70%;  */
+        height: 40px; 
+    }
     .EdittaskManager {
         width: 90%;
     }
 
     .EdittaskManager input { 
-        width: 70%;       
+        width: 70%;      
+        height: 40px; 
     }
     .EdittaskManager>div{
         height: inherit;
