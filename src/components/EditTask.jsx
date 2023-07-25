@@ -8,16 +8,6 @@ const EditTask = () => {
     // const [num, setNum] = useState(0)
     const navigate = useNavigate()
     const { id } = useParams()
-
-    const handleKeypress = async (e) => {
-        if (e.keyCode === 13) {
-            try {
-                //     await axios.patch(`${server}/${id}`, { data })
-            } catch (error) {
-                console.log(error);
-            }
-        }
-    }
     const handleEdit = async () => {
         const res = await axios.patch(`${server}/${id}`, { name, completed })
         console.log(res);

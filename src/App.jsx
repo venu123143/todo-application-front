@@ -1,6 +1,6 @@
 
-import "./app.css"
 import { Route, Routes } from 'react-router-dom'
+import "./app.css"
 
 import HomePage from "./components/HomePage.jsx"
 import EditTask from "./components/EditTask"
