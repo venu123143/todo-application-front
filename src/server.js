@@ -1,1 +1,1 @@
-export const server = "http://localhost:5000/api/tasks"
+export const server = "https://todoapireact.onrender.com/api/tasks"
