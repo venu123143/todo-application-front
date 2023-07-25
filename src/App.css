@@ -236,10 +236,16 @@ input[type=number] {
         height: 40px; 
     }
     .EdittaskManager {
+        height: inherit;
         width: 90%;
     }
-
+    .button{
+        margin-top: 5px;
+        height: 30px;
+        font-size: 1rem;
+    }
     .EdittaskManager input { 
+        font-size: 1rem;
         width: 70%;      
         height: 40px; 
     }
