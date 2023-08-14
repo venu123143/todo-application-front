@@ -5,11 +5,18 @@ import axios from "axios"
 import { server } from '../server'
 import { BsFillCheckCircleFill } from "react-icons/bs"
 import { Link } from 'react-router-dom'
+
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDarkMode, selectDarkMode } from '../redux/toggleReduxer'
+
 const HomePage = () => {
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector(selectDarkMode);
   const [data, setData] = useState([])
   const [name, setName] = useState("")
   const [num, setNum] = useState(0)
-  console.log(num);
+
+
   const fetchAllData = async () => {
     const data = await axios.get(`${server}`)
     setData(data.data.allData)
@@ -45,9 +52,18 @@ const HomePage = () => {
       }
     }
   }
+  const handleDarkMode = () => {
+    dispatch(toggleDarkMode());
+  }
+
   return (
     <>
-      <div className='parent'>
+      <div className={isDarkMode ? "parent parent2" : "parent"}>
+        <label className="switch">
+          <input type="checkbox" checked={isDarkMode} onChange={handleDarkMode} />
+          <span className="slider round"></span>
+        </label>
+        <h5 className={isDarkMode ? "white" : null}>Dark Mode</h5>
         <div className='subparent'>
           <div className='taskManager'>
             <h2 className='heading'>Task Manager</h2>
@@ -59,7 +75,7 @@ const HomePage = () => {
         </div>
 
         {
-          data.length!==0 ? (data.map((each) => (
+          data.length !== 0 ? (data.map((each) => (
             <>
               <div className='savedata'>
                 <div className='title-icon'>

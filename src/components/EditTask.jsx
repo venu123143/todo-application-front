@@ -2,7 +2,10 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { server } from '../server'
 import { useNavigate, useParams } from 'react-router-dom'
+import { selectDarkMode } from '../redux/toggleReduxer'
+import { useSelector } from 'react-redux'
 const EditTask = () => {
+    const isDarkMode = useSelector(selectDarkMode);
     const [name, setName] = useState("")
     const [completed, setCompleted] = useState(false)
     // const [num, setNum] = useState(0)
@@ -23,7 +26,7 @@ const EditTask = () => {
     }
     return (
         <div>
-            <div className='parent'>
+            <div className={isDarkMode ? "parent parent2" : "parent"}>
                 <div className='subparent'>
                     <div className='EdittaskManager'>
                         <h2 className='heading '>Edit Task </h2>
